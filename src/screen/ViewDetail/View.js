@@ -106,6 +106,7 @@ function ViewDetail(props) {
                     text: "OK",
                     onPress: () => {
                         dispatch(approve(activeType, data,user.UserId))
+                        setModalVisible(false);
                         props.navigation.navigate('Home')
                     }
                 }
