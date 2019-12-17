@@ -76,7 +76,7 @@ export const login = (email, password) => async (dispatch) => {
     const user = await UserController.login(email, password);
     dispatch(loginSuccess(user.Data))
     console.log(user);
-    alert("JSON.stringify(user)");
+    // alert("JSON.stringify(user)");
   } catch (error) {
     alert(error)
     dispatch(loginError(error));
@@ -89,6 +89,7 @@ export const reset = (newPass, conPass,email) => async (dispatch) => {
     const user = await UserController.resetPassword(newPass, conPass,email);
     console.log(user);
 
+    alert("Please Back to Login");
     dispatch(resetPassSuccess(user.Data));
     dispatch(logout());
   } catch (error) {

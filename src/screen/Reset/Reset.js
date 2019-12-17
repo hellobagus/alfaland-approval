@@ -84,8 +84,9 @@ function Login(props) {
 }
 
 Login.navigationOptions = {
-  header: null,
-};
+  headerTransparent: true,
+  headerTintColor: "black",
+  headerTitleStyle: { color: "black" }};
 
 Login.propTypes = {
   navigation: PropTypes.object.isRequired,

@@ -10,10 +10,12 @@ import {
     Form,
     Item,
     Label,
+    Button,
+    Footer
 } from "native-base";
 import { useSelector, useDispatch } from "react-redux";
 
-import Button from "../../components/common/Button";
+// import Button from "../../components/common/Button";
 import styles from "./styles";
 import { Style } from "../../Theme";
 
@@ -72,15 +74,23 @@ export default function ChangePass(props) {
                             style={styles.ownerAvatarImg}
                         />
                     </View>
+                    <View style={styles.ownerInfo}>
+                            <View>
+                                <Text style={styles.ownerName}>
+                                    {user.name}
+                                </Text>
+                                <Text style={styles.ownerLocation}>
+                                    {user.Group}
+                                </Text>
+                                <Text style={styles.ownerLocation}>
+                                Change Password
+
+                                </Text>
+                            </View>
+                        </View>
                 </View>
 
                 <Form>
-                    <Item>
-                        <Label style={[Style.textWhite, Style.textMedium]}>
-                            Change Password
-                        </Label>
-                    </Item>
-
                     <Item floatingLabel disabled>
                         <Label style={[Style.textWhite, Style.textMedium]}>
                             Old Password
@@ -111,11 +121,12 @@ export default function ChangePass(props) {
                         />
                     </Item>
 
-
+                </Form>
+                    <View>
                     <Button style={{backgroundColor:'blue'}} onPress={savePassword}>
                         <Text style={[Style.textWhite]}>Save</Text>
                     </Button>
-                </Form>
+                    </View>
             </Content>
         </Container>
     );

@@ -48,6 +48,7 @@ function ViewDetail(props) {
         entity_cd,
         entity_name,
         descs,
+        doc_date,
         module: modules,
         // doc_date,
         // approval_user_name,
@@ -154,6 +155,14 @@ function ViewDetail(props) {
                                     {/* <Text style={Styles.infoHeader}>{'Address'.toUpperCase()}</Text> */}
                                     <Text style={styles.infoDesc}>
                                         Doc No : {doc_no}
+                                    </Text>
+                                </View>
+                            </ListItem>
+                            <ListItem style={styles.infoItem}>
+                                <View>
+                                    <Text style={styles.infoDesc}>
+                                        Date : {moment(doc_date).format("DD MMMM YYYY")} 
+
                                     </Text>
                                 </View>
                             </ListItem>
@@ -269,12 +278,12 @@ function ViewDetail(props) {
                     </Button>
                     <Button style={style.bgYellowDark} onPress={() => onPressed("A")}>
                         <Text style={[style.textBot, { color: "#fff" }]}>
-                            Approve
+                            Approved
                         </Text>
                     </Button>
                     <Button bordered style={style.bgBotA} onPress={() => onPressed("C")}>
                         <Text style={[style.textBot, { color: "#fff" }]}>
-                            Cancel
+                            Reject
                         </Text>
                     </Button>
                 </FooterTab>

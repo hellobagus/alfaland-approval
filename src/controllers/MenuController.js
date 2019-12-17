@@ -7,6 +7,25 @@ class MenuController {
     this.appPath = '/c_approval';
   }
 
+
+  // getSearch =  async (entity,docNo) => {
+ 
+  //   try {
+  //     const result = await httpClient.request({
+  //       url: `${this.basePath}/search?q=`,
+  //       method: "GET",
+  //       data : {
+  //         entity_name : entity,
+  //         doc_no : docNo
+  //       }
+  //     });
+  //     return result;
+  //   } catch (error) {
+  //     return Promise.reject(error);
+  //   }
+  // }
+
+
   getMenu = async (userId) => {
     try {
       const result = await httpClient.request({
@@ -32,7 +51,8 @@ class MenuController {
           approval_id : approval_id
         }
       });
-      return result;
+      return result.toString().toLowerCase();
+
     } catch (error) {
       return Promise.reject(error);
     }

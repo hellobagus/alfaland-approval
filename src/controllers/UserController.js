@@ -23,7 +23,7 @@ class UserController {
         }
       });
 
-      alert(result.Pesan);
+      // alert(result.Pesan);
 
 
       if(result.Error){

@@ -21,6 +21,11 @@ const styles = StyleSheet.create({
     body: {
         marginTop: 40
     },
+    searchInput:{
+        padding: 10,
+        borderColor: '#CCC',
+        borderWidth: 1
+      },
     bodyContent: {
         flex: 1,
         alignItems: "center",

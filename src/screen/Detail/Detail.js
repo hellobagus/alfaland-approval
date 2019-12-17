@@ -24,9 +24,13 @@ import getUser from "selectors/UserSelectors";
 import { getDetail } from "../../actions/MenuActions";
 import { selectDetail } from "../../selectors/MenuSelectors";
 import numFormat from "../../components/common/numFormat";
+import moment from 'moment';
+import { SearchBar } from 'react-native-elements';
+
 
 function Detail(props) {
     const dispatch = useDispatch();
+
     const {
         approval_name,
         approval_user,
@@ -44,6 +48,12 @@ function Detail(props) {
         },
         [dispatch]
     );
+
+    const searchText = (text) => {
+        console.log('text', text)
+    };
+
+    
 
     useEffect(() => {
         getDetails();
@@ -83,9 +93,13 @@ function Detail(props) {
                 style={styles.layoutInner}
                 contentContainerStyle={styles.layoutContent}
             >
+            <SearchBar
+                round
+                placeholder="Type Here..."
+                onChangeText={searchText}
+                />
                 <ScrollView>
-                    {!load ? (
-                        detail.map((data, key) => (
+                    {!load ? (detail.map((data,key) => (
                             <TouchableOpacity
                                 key={key}
                                 style={styles.item}
@@ -110,6 +124,10 @@ function Detail(props) {
                                                 >
                                                     Doc No : {data.doc_no}
                                                 </Text>
+                                    <Text style={styles.itemLocation}>
+                                        Date : {moment(data.doc_date).format("DD MMMM YYYY")} 
+
+                                    </Text>
                                                 <Text
                                                     style={styles.itemLocation}
                                                 >
