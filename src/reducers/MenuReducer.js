@@ -36,9 +36,6 @@ const menuReducer = (state = menuState, action) => {
     default:
       return {
         ...state,
-        menu: []
-        
-        
       }
     
       
