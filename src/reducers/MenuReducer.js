@@ -18,8 +18,6 @@ const otorisasiState = {
 
 
 
-
-
 const menuReducer = (state = menuState, action) => {
   switch (action.type) {
     case actionTypes.MENU_REQUEST:
@@ -84,4 +82,5 @@ export {
   menuReducer,
   detailReducer,
   otorisasiReducer,
+  
 };

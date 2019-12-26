@@ -12,6 +12,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  eye: {
+    position: 'absolute',
+    right: 3,
+    height: 40,
+    width: 35,
+    padding: 5,
+    top: 150
+  },
   formContainer: {
     alignSelf: 'stretch',
     justifyContent: 'center',

@@ -21,7 +21,13 @@ export const actionTypes = {
   APPROVE_REQUEST: 'APPROVE_REQUEST',
   APPROVE_ERROR: 'APPROVE_ERROR',
   APPROVE_SUCCESS: 'APPROVE_SUCCESS',
+
+
+
+
 };
+
+
 
 const menuRequest = () => ({
   type: actionTypes.MENU,
@@ -79,6 +85,9 @@ const approveError = error => ({
   type: actionTypes.APPROVE_ERROR,
   error,
 });
+
+
+
 
 export const getMenu = (userId) => async (dispatch) => {
   dispatch(menuRequest());
